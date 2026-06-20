@@ -348,7 +348,7 @@ def validar_legajo():
                 if empleado["acceso"] == "False":  
                     print(f"\nLegajo {legajo1} acceso restringido. Comunicarse con administracion.\n")
                     registrar("Acceso restringido")
-                    return None , indice, empleados, None , None
+                    return None , None, empleados, None , None
 
                 if not validar_contraseña(indice, empleados):
                     empleados[indice]["acceso"] = "False"
@@ -966,8 +966,6 @@ def desbloquear_usuario(empleados):
     registrar("Inicio desbloqueo de usuario.")
 
     indice,empleado,legajo = buscar_legajo(empleados)
-    print("mira aca")
-    print(indice)
     if indice is not None:
 
             if empleado["acceso"] == "True":
@@ -1386,3 +1384,5 @@ def mostrar_logo():
         print("\n\n")    
 
 mostrar_logo()
+
+
